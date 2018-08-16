@@ -9,10 +9,10 @@ This is a Python script that converts a numpy.ndarray containing a point cloud
 (x, y, z) into a NetworkX graph.
 
 The code also includes a function to extract shortest path information from a
-graph. However, any NetworkX method/function can be called from/on a graph
+graph. Any NetworkX method/function can be called from/on a graph
 created with array_to_graph function.
 
-This code is being developed as part of my PhD research, supervised by Dr. Mat Disney,
+This code was developed as part of my PhD research, supervised by Dr. Mat Disney,
 in the Department of Geography at University College London (UCL). My research 
 is funded through Science Without Borders from the National Council of Technological
 and Scientific Development (10.13039/501100003593) – Brazil (Process number 233849/2014-9). 
