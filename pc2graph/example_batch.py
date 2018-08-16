@@ -105,7 +105,8 @@ if __name__ == '__main__':
         upscale_cloud = point_cloud[upscale_ids]
         
         # Calculating difference array and preparing output point cloud.
-        diff = np.abs(upscale_cloud[:, 2] - upscale_distance)
+        scaled_height = upscale_cloud[:, 2] - np.min(upscale_cloud[:, 2])
+        diff = np.abs(scaled_height - upscale_distance)
         
         # Stacking all variables and exporting.
         out_cloud = np.hstack((upscale_cloud, upscale_distance.reshape(-1, 1),
