@@ -60,3 +60,8 @@ if __name__ == "__main__":
     nodes_ids, distance, path_list = extract_path_info(G, base_point,
                                                        return_path=True)
     nodes = point_cloud[nodes_ids]
+    
+    # Preparing output point cloud.
+    distance = np.asarray(distance).reshape(-1, 1)
+    out_cloud = np.hstack((nodes, distance))
+    np.savetxt('../data/output_point_cloud.txt', out_cloud, fmt='%1.3f')
