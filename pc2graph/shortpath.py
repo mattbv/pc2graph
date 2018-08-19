@@ -30,7 +30,8 @@ from sklearn.neighbors import NearestNeighbors
 
 
 def array_to_graph(arr, base_id, kpairs, knn, nbrs_threshold,
-                   nbrs_threshold_step, graph_threshold=np.inf):
+                   nbrs_threshold_step, graph_threshold=np.inf,
+                   return_step=False):
 
     """
     Converts a numpy.array of points coordinates into a Weighted BiDirectional
@@ -61,12 +62,18 @@ def array_to_graph(arr, base_id, kpairs, knn, nbrs_threshold,
     graph_threshold : float
         Maximum distance between pairs of nodes (edge distance) accepted in
         the graph generation.
+    return_step : bool
+        Option to select if function should output the step register, which
+        can be used to debug the creationg of graph 'G'.
 
     Returns
     -------
     G : networkx graph
         Graph containing all points in 'arr' as nodes.
-
+    step_register : array
+        1D array with the same number of entries as 'arr'. Stores the step
+        number of which each point in 'arr' was added to 'G'.
+        
     """
 
     # Initializing graph.
@@ -88,9 +95,18 @@ def array_to_graph(arr, base_id, kpairs, knn, nbrs_threshold,
     # and all ids already processed (processed_idx).
     current_idx = [base_id]
     processed_idx = [base_id]
+    
+    # Setting up the register of at which step each point was added to the
+    # graph.
+    step_register = np.full(arr.shape[0], np.nan)
+    current_step = 0
+    step_register[base_id] = current_step
 
     # Looping while there are still indices (idx) left to process.
     while idx.shape[0] > 0:
+        
+        # Increasing a single step count.
+        current_step += 1
 
         # If current_idx is a list containing several indices.
         if len(current_idx) > 0:
@@ -191,8 +207,15 @@ def array_to_graph(arr, base_id, kpairs, knn, nbrs_threshold,
 
         # Generating list of remaining proints to process.
         idx = idx_base[np.in1d(idx_base, processed_idx, invert=True)]
+        
+        # Adding new nodes to the step register.
+        current_idx = np.array(current_idx).astype(int)
+        step_register[current_idx] = current_step
 
-    return G
+    if return_step is True:
+        return G, step_register
+    else:
+        return G
 
 
 def extract_path_info(G, base_id, return_path=True):

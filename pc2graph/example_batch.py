@@ -29,6 +29,7 @@ from shortpath import (array_to_graph, extract_path_info)
 from downsampling import (downsample_cloud, upsample_cloud)
 import os
 
+
 if __name__ == '__main__':
 
     # Declaring list of files to process and output folder.
@@ -70,7 +71,7 @@ if __name__ == '__main__':
     
         # Maximum distance between points. If distance > threshold, neighboring
         # point is not added to graph.
-        nbrs_threshold = 0.08
+        nbrs_threshold = 0.15
     
         # When initial growth process is broken (gap in the cloud) and no
         # other point can be added, incease threshold to include missing points.
