@@ -1,1 +1,1 @@
-../data/point_cloud_example.txt
+../../data/point_cloud_example.txt

@@ -1,4 +1,4 @@
-# Copyright (c) 2017, Matheus Boni Vicari, TLSeparation Project
+# Copyright (c) 2018-2019, Matheus Boni Vicari, pc2graph
 # All rights reserved.
 #
 #
@@ -16,10 +16,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 __author__ = "Matheus Boni Vicari"
-__copyright__ = "Copyright 2017"
+__copyright__ = "Copyright 2018-2019"
 __credits__ = ["Matheus Boni Vicari"]
 __license__ = "GPL3"
-__version__ = "0.1"
+__version__ = "1.0"
 __maintainer__ = "Matheus Boni Vicari"
 __email__ = "matheus.boni.vicari@gmail.com"
 __status__ = "Development"
@@ -32,9 +32,9 @@ import os
 
 if __name__ == '__main__':
 
-    # Declaring list of files to process and output folder.
-    filelist = '../data/batch/files.txt'
-    out_folder = '../data/batch/'
+    # Declaring list of files to process and output directory.
+    filelist = '../../data/batch/files.txt'
+    out_dir = '../../data/batch/'
     
     # Declaring downsample size of 10 cm.
     downsample_size = 0.1
@@ -112,4 +112,4 @@ if __name__ == '__main__':
         # Stacking all variables and exporting.
         out_cloud = np.hstack((upscale_cloud, upscale_distance.reshape(-1, 1),
                                diff.reshape(-1, 1)))
-        np.savetxt('%s%s.txt' % (out_folder, fname), out_cloud, fmt='%1.3f')
+        np.savetxt('%s%s.txt' % (out_dir, fname), out_cloud, fmt='%1.3f')

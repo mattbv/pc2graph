@@ -1,4 +1,4 @@
-# Copyright (c) 2017, Matheus Boni Vicari, TLSeparation Project
+# Copyright (c) 2018-2019, Matheus Boni Vicari, pc2graph
 # All rights reserved.
 #
 #
@@ -16,10 +16,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 __author__ = "Matheus Boni Vicari"
-__copyright__ = "Copyright 2017"
+__copyright__ = "Copyright 2018-2019"
 __credits__ = ["Matheus Boni Vicari"]
 __license__ = "GPL3"
-__version__ = "0.1"
+__version__ = "1.0"
 __maintainer__ = "Matheus Boni Vicari"
 __email__ = "matheus.boni.vicari@gmail.com"
 __status__ = "Development"
@@ -31,7 +31,7 @@ from shortpath import (array_to_graph, extract_path_info)
 if __name__ == "__main__":
 
     # Loads point cloud into a numpy.ndarray (n_points x dimensions).
-    point_cloud = np.loadtxt('../data/point_cloud_example.txt')
+    point_cloud = np.loadtxt('../../data/point_cloud_example.txt')
 
     # Growth factor. Each point adds 3 new points to graph.
     kpairs = 3
@@ -64,4 +64,4 @@ if __name__ == "__main__":
     # Preparing output point cloud.
     distance = np.asarray(distance).reshape(-1, 1)
     out_cloud = np.hstack((nodes, distance))
-    np.savetxt('../data/output_point_cloud.txt', out_cloud, fmt='%1.3f')
+    np.savetxt('../../data/output_point_cloud.txt', out_cloud, fmt='%1.3f')

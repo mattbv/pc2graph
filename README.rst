@@ -5,7 +5,7 @@ pc2graph
 General Information
 ~~~~~~~~~~~~~~~~~~~
 
-This is a Python script that converts a numpy.ndarray containing a point cloud
+This is a Python (2.7x) script that converts a numpy.ndarray containing a point cloud
 (x, y, z) into a NetworkX graph.
 
 The code also includes a function to extract shortest path information from a
@@ -19,3 +19,27 @@ and Scientific Development (10.13039/501100003593) – Brazil (Process number 23
 
 Any questions or suggestions, feel free to contact me using one of the
 following e-mails: matheus.boni.vicari@gmail.com or matheus.vicari.15@ucl.ac.uk
+
+
+Installation
+~~~~~~~~~~~~
+
+To install this package use the command:
+
+    .. code-block:: python
+
+        python setup.py install
+
+or:
+
+    .. code-block:: python
+
+        pip install pc2graph
+
+
+
+
+
+
+
+
