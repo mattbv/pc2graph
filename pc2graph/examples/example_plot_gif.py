@@ -19,7 +19,7 @@ __author__ = "Matheus Boni Vicari"
 __copyright__ = "Copyright 2018-2019"
 __credits__ = ["Matheus Boni Vicari"]
 __license__ = "GPL3"
-__version__ = "1.0"
+__version__ = "1.0.1"
 __maintainer__ = "Matheus Boni Vicari"
 __email__ = "matheus.boni.vicari@gmail.com"
 __status__ = "Development"
@@ -29,9 +29,6 @@ from shortpath import array_to_graph
 import numpy as np
 import glob
 import os
-
-
-
 
 if __name__ == '__main__':
     

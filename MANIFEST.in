@@ -1,0 +1,5 @@
+include LICENSE README.rst CHANGELOG.rst contributors.txt requirements.txt
+include data/point_cloud_example.txt
+include data/output_point_cloud.txt
+include data/test_gif/test.gif
+include data/batch/files.txt

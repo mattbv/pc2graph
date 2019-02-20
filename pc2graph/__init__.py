@@ -19,7 +19,7 @@ __author__ = "Matheus Boni Vicari"
 __copyright__ = "Copyright 2018-2019"
 __credits__ = ["Matheus Boni Vicari"]
 __license__ = "GPL3"
-__version__ = "1.0"
+__version__ = "1.0.1"
 __maintainer__ = "Matheus Boni Vicari"
 __email__ = "matheus.boni.vicari@gmail.com"
 __status__ = "Development"
@@ -27,6 +27,6 @@ __status__ = "Development"
 
 __all__ = ['downsampling', 'shortpath']
 
-import downsampling
-import shortpath
+from downsampling import downsample_cloud, upsample_cloud
+from shortpath import array_to_graph, extract_path_info
 

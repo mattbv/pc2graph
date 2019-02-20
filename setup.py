@@ -20,7 +20,7 @@ __author__ = "Matheus Boni Vicari"
 __copyright__ = "Copyright 2018-2019, pc2graph"
 __credits__ = ["Matheus Boni Vicari"]
 __license__ = "GPL3"
-__version__ = "1.0"
+__version__ = "1.0.1"
 __maintainer__ = "Matheus Boni Vicari"
 __email__ = "matheus.boni.vicari@gmail.com"
 __status__ = "Development"
@@ -32,12 +32,12 @@ def readme():
     with open('README.rst') as f:
         return f.read()
 
-with open('requirements.txt') as f:
+with open('requirements.txt', 'r') as f:
     required = f.read().splitlines()
 
 setup(
     name="pc2graph",
-    version="1.0",
+    version="1.0.1",
     author='Matheus Boni Vicari',
     author_email='matheus.boni.vicari@gmail.com',
     packages=find_packages(),
